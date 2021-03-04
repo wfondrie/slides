@@ -288,4 +288,13 @@ https://github.com/wfondrie/inspired
 - Bonus: setup black as a pre-commit hook
   https://black.readthedocs.io/en/stable/version_control_integration.html
 
+* Publish your package, so folks can use it!
+#+ATTR_REVEAL: :frag (appear)
+- The Python Package Index (PyPI)
+   https://pypi.org/
+- Bioconda (for bio-related packages)
+   https://bioconda.github.io/
+- Conda-Forge (for everything else)
+  https://conda-forge.org/
+
 * Questions?

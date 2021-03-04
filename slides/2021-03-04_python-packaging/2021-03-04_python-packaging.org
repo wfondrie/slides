@@ -1,4 +1,6 @@
 #+OPTIONS: toc:nil reveal_width:1920 reveal_height:1080 num:nil \n:t
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_VERSION: 4
 #+REVEAL_THEME: ../../css/dark.css
 #+REVEAL_TRANS: none
 #+REVEAL_HLEVEL: 3

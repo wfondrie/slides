@@ -6,11 +6,12 @@
 #+REVEAL_HLEVEL: 3
 #+REVEAL_PLUGINS: (highlight)
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h2>%s</h2><h3>%A %a</h3><p>%d</p><p>View online: <a href="%u">%u</a></p>
+#+REVEAL_HEAD_PREAMBLE: <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
 
 #+Title: You should write a Python package
 #+Author: William E Fondrie, PhD
 #+Date: 2021-03-04
-#+REVEAL_TALK_URL: https://github.com/wfondrie/slides
+#+REVEAL_TALK_URL: https://git.io/python-packaging
 
 * Outline
 #+ATTR_REVEAL: :frag (appear)

@@ -1,0 +1,288 @@
+#+OPTIONS: toc:nil reveal_width:1920 reveal_height:1080 num:nil \n:t
+#+REVEAL_THEME: ../../css/dark.css
+#+REVEAL_TRANS: none
+#+REVEAL_HLEVEL: 3
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h2>%s</h2><h3>%A %a</h3><p>%d</p><p>View online: <a href="%u">%u</a></p>
+
+#+Title: You should write a Python package
+#+Author: William E Fondrie, PhD
+#+Date: 2021-03-04
+#+REVEAL_TALK_URL: https://github.com/wfondrie/slides
+
+* Outline
+#+ATTR_REVEAL: :frag (appear)
+- Why you should write a Python package.
+- How to write a Python package.
+- Ways to make your package better.
+
+
+* Why should you write a Python package?
+
+* To learn more about Python
+#+ATTR_REVEAL: :frag (appear)
+Coming from R, I learned Python by translating a simple R package to Python.
+#+ATTR_REVEAL: :frag (appear)
+- rpx: https://github.com/lgatto/rpx
+  [[./img/rpx.png]]
+- ppx: https://github.com/wfondrie/ppx
+  [[./img/ppx.png]]
+
+
+* To easily reuse code for multiple projects
+#+ATTR_REVEAL: :frag (appear) :frag_idx
+I keep useful things in my personal wispy package.
+https://github.com/wfondrie/wispy
+
+#+REVEAL_HTML: <div class="column" style="float:left; width:60%">
+#+ATTR_REVEAL: :frag (appear)
+For a talk:
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC python
+import numpy as np
+import matplotlib.pyplot as plt
+from wispy import theme
+
+pal = theme.talk(dark=True)
+
+np.random.seed(42)
+plt.figure()
+plt.plot(np.random.randn(10))
+plt.plot(np.random.randn(10) + np.arange(10))
+plt.show()
+#+END_SRC
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width:40%">
+#+ATTR_REVEAL: :frag (appear)
+[[./img/theme.png]]
+#+REVEAL_HTML: </div>
+
+* To easily reuse code for multiple projects
+I keep useful things in my personal wispy package.
+https://github.com/wfondrie/wispy
+
+#+REVEAL_HTML: <div class="column" style="float:left; width:60%">
+For a paper:
+#+BEGIN_SRC python
+import numpy as np
+import matplotlib.pyplot as plt
+from wispy import theme
+
+pal = theme.paper()
+
+np.random.seed(42)
+plt.figure()
+plt.plot(np.random.randn(10))
+plt.plot(np.random.randn(10) + np.arange(10))
+plt.show()
+#+END_SRC
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width:40%">
+[[./img/theme.png]]
+#+REVEAL_HTML: </div>
+
+* To easily reuse code for multiple projects
+I keep useful things in my personal wispy package.
+https://github.com/wfondrie/wispy
+
+#+REVEAL_HTML: <div class="column" style="float:left; width:60%">
+For a paper:
+#+BEGIN_SRC python
+import numpy as np
+import matplotlib.pyplot as plt
+from wispy import theme
+
+pal = theme.paper()
+
+np.random.seed(42)
+plt.figure()
+plt.plot(np.random.randn(10))
+plt.plot(np.random.randn(10) + np.arange(10))
+plt.show()
+#+END_SRC
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width:40%">
+[[./img/theme_paper.png]]
+#+REVEAL_HTML: </div>
+
+
+
+* To distribute software, so that folks can use it
+
+#+ATTR_REVEAL: :frag (appear)
+- Python packages are easy to install... /most of the time/.
+- A recent example for me is mokapot: https://github.com/wfondrie/mokapot
+- Install with pip or conda:
+  #+BEGIN_SRC bash
+  # With conda:
+  conda install -c bioconda mokapot
+
+  # With pip:
+  pip install mokapot
+  #+END_SRC
+
+
+* How do you write a Python package?
+
+* Let's make a package together
+
+#+ATTR_REVEAL: :frag (appear)
+- We'll make a package called **inspired**.
+- It will provide random inspirational messages on demand (for error and progress messages):
+  #+ATTR_REVEAL: :frag (appear)
+  #+BEGIN_SRC python
+  import inspired
+
+  try:
+      assert 1 == 2
+  except AssertionError:
+      raise AssertionError(inspired.by_yoda())
+
+  # AssertionError: Do or do not. There is no try.
+  #+END_SRC
+
+
+* The structure of our package
+#+ATTR_REVEAL: :frag (appear)
+- A package is little more than a collection of python scripts:
+  #+BEGIN_EXAMPLE
+  inspired
+  |- LICENSE
+  |- README.md
+  |- inspired
+  |  |- __init__.py
+  |  |- yoda.py
+  |  `- (*.py files for other messages)
+  |- pyproject.toml
+  |- setup.cfg
+  `- setup.py
+  #+END_EXAMPLE
+
+- Many details at https://packaging.python.org/tutorials/packaging-projects/
+
+* The README
+#+ATTR_REVEAL: :frag (appear)
+- Describes the package to whatever level of detail we want.
+- We'll keep ours simple:
+  #+BEGIN_EXAMPLE
+  # inspired
+  Effortlessly inject inspirational messages into your Python code.
+  #+END_EXAMPLE
+
+* The LICENSE
+#+ATTR_REVEAL: :frag (appear)
+- There are a few open-source license to choose from.
+- Check out https://choosealicense.com/ for help.
+- We'll use the MIT license for inspired.
+
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_QUOTE
+The MIT License is short and to the point. It lets people do almost anything they want with your project, like making and distributing closed source versions.
+#+END_QUOTE
+
+* pyproject.toml specifies configurations for build tools
+#+ATTR_REVEAL: :frag (appear)
+- A good blog post on why it is helpful https://snarky.ca/what-the-heck-is-pyproject-toml/
+- For our basic package, our ~pyproject.toml~ is:
+  #+BEGIN_SRC toml
+  [build-system]
+  requires = [
+      "setuptools>=42",
+      "wheel"
+  ]
+  build-backend = "setuptools.build_meta"
+  #+END_SRC
+
+* setup.cfg defines your package metadata
+- See https://packaging.python.org/tutorials/packaging-projects/ for the available fields.
+
+* setup.py is no longer necessary
+#+ATTR_REVEAL: :frag (appear)
+- ~setup.py~ is the legacy way to define what we did in ~pyproject.toml~ and ~setup.cfg~.
+- However, it is needed to create editable installs, which are super useful!
+  #+BEGIN_SRC bash
+  pip install -e .
+  #+END_SRC
+- Ours will be:
+  #+BEGIN_SRC python
+  import setuptools
+
+  setuptools.setup()
+  #+END_SRC
+
+* ~__init__.py~ tells Python that a directory is a package
+#+ATTR_REVEAL: :frag (appear)
+- Things that are imported into ~__init__.py~ are easily available to users.
+- ~__init__.py~ can be empty.
+- Ours will be:
+  #+BEGIN_SRC python
+  from .yoda import by_yoda
+  #+END_SRC
+- Now we need to create a ~by_yoda()~ function in ~yoda.py~
+
+* The other Python files define the package functionality
+#+ATTR_REVEAL: :frag (appear)
+- Each is referred to as a module.
+- Functions, classes, constants, etc that are imported by ~__init__.py~ are
+  available at the top level of the package.
+- Others can be reached through their respective modules.
+  #+BEGIN_SRC python
+  import os
+  os.path.isfile("blah.txt")
+  #+END_SRC
+
+* Let's finish our package and see if it works.
+https://github.com/wfondrie/inspired
+
+
+* How can you make your package better?
+
+* Documentation makes your package usable
+#+ATTR_REVEAL: :frag (appear)
+- Create beautiful docs: sphinx https://www.sphinx-doc.org/en/master/
+- Sphinx can generate documentation automatically from your Python docstrings!
+  #+BEGIN_SRC python
+  def add(x, y):
+      """Add x and y.
+
+      Calculate a simple sum between two numbers.
+
+      Parameters
+      ----------
+      x : float
+          The first number to add.
+      y : float
+          The second number to add.
+
+      Returns
+      -------
+      float
+          The sum of x and y.
+      """
+      return x + y
+  #+END_SRC
+
+
+* Tests verify that your package works
+#+ATTR_REVEAL: :frag (appear)
+- Create and run tests: pytest
+  https://docs.pytest.org/en/stable/
+- Run tests with each commit (continuous integration): GitHub Actions
+  https://docs.github.com/en/actions
+- Get reports about how much code your tests cover: Codecov
+  https://about.codecov.io/
+
+
+* Linters standardize code style (and find problems)
+#+ATTR_REVEAL: :frag
+- PEP8 describes the Python style standards
+  https://www.python.org/dev/peps/pep-0008/
+- Automatically format code: black
+  https://black.readthedocs.io/en/stable/
+- Bonus: setup black as a pre-commit hook
+  https://black.readthedocs.io/en/stable/version_control_integration.html
+
+* Questions?

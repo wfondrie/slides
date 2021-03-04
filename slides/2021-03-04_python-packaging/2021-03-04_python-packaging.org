@@ -280,7 +280,7 @@ https://github.com/wfondrie/inspired
 
 
 * Linters standardize code style (and find problems)
-#+ATTR_REVEAL: :frag
+#+ATTR_REVEAL: :frag (appear)
 - PEP8 describes the Python style standards
   https://www.python.org/dev/peps/pep-0008/
 - Automatically format code: black

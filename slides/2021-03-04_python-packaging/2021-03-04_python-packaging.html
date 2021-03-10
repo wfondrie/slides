@@ -17,12 +17,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1>You should write a Python package</h1><h2></h2><h3> William E Fondrie, PhD</h3><p>2021-03-04</p><p>View online: <a href="https://git.io/python-packaging">https://git.io/python-packaging</a></p>
+<h1>You should write a Python package</h1><h2></h2><h3> William E Fondrie, PhD</h3><p>2021-03-04</p><p>View online: <a href="https://git.io/python-packaging">https://git.io/python-packaging</a></p><p><img src="img/ccby.svg" alt="CC-BY"></p>
 </section>
 
 <section>
-<section id="slide-org044cad2">
-<h2 id="org044cad2">Outline</h2>
+<section id="slide-org324661e">
+<h2 id="org324661e">Outline</h2>
 <ul>
 <li class="fragment appear">Why you should write a Python package.<br /></li>
 <li class="fragment appear">How to write a Python package.<br /></li>
@@ -34,14 +34,14 @@
 </section>
 </section>
 <section>
-<section id="slide-org6fc479a">
-<h2 id="org6fc479a">Why should you write a Python package?</h2>
+<section id="slide-org6c727e8">
+<h2 id="org6c727e8">Why should you write a Python package?</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-org203e77d">
-<h2 id="org203e77d">To learn more about Python</h2>
+<section id="slide-org421efd4">
+<h2 id="org421efd4">To learn more about Python</h2>
 <p class="fragment (appear)">
 Coming from R, I learned Python by translating a simple R package to Python.<br />
 </p>
@@ -57,8 +57,8 @@ Coming from R, I learned Python by translating a simple R package to Python.<br 
 </section>
 </section>
 <section>
-<section id="slide-org8a69795">
-<h2 id="org8a69795">To easily reuse code for multiple projects</h2>
+<section id="slide-org11246a1">
+<h2 id="org11246a1">To easily reuse code for multiple projects</h2>
 <p class="fragment (appear)">
 I keep useful things in my personal wispy package.<br />
 <a href="https://github.com/wfondrie/wispy" class="fragment (appear)">https://github.com/wfondrie/wispy</a><br />
@@ -87,7 +87,7 @@ plt.show()
 
 <div class="column" style="float:right; width:40%">
 
-<div id="org17b9b03" class="figure">
+<div id="org5aafa17" class="figure">
 <p><img src="./img/theme.png" alt="theme.png" class="fragment (appear)" /><br />
 </p>
 </div>
@@ -96,8 +96,8 @@ plt.show()
 </section>
 </section>
 <section>
-<section id="slide-org495c871">
-<h2 id="org495c871">To easily reuse code for multiple projects</h2>
+<section id="slide-orgb77fb6f">
+<h2 id="orgb77fb6f">To easily reuse code for multiple projects</h2>
 <p>
 I keep useful things in my personal wispy package.<br />
 <a href="https://github.com/wfondrie/wispy">https://github.com/wfondrie/wispy</a><br />
@@ -126,7 +126,7 @@ plt.show()
 
 <div class="column" style="float:right; width:40%">
 
-<div id="orgc0a727f" class="figure">
+<div id="orge7cf7b6" class="figure">
 <p><img src="./img/theme.png" alt="theme.png" /><br />
 </p>
 </div>
@@ -135,8 +135,8 @@ plt.show()
 </section>
 </section>
 <section>
-<section id="slide-org410178e">
-<h2 id="org410178e">To easily reuse code for multiple projects</h2>
+<section id="slide-org060ecdb">
+<h2 id="org060ecdb">To easily reuse code for multiple projects</h2>
 <p>
 I keep useful things in my personal wispy package.<br />
 <a href="https://github.com/wfondrie/wispy">https://github.com/wfondrie/wispy</a><br />
@@ -165,7 +165,7 @@ plt.show()
 
 <div class="column" style="float:right; width:40%">
 
-<div id="orgaa3a078" class="figure">
+<div id="orgf0d9e9a" class="figure">
 <p><img src="./img/theme_paper.png" alt="theme_paper.png" /><br />
 </p>
 </div>
@@ -176,8 +176,8 @@ plt.show()
 </section>
 </section>
 <section>
-<section id="slide-org2875d43">
-<h2 id="org2875d43">To distribute software, so that folks can use it</h2>
+<section id="slide-org008f063">
+<h2 id="org008f063">To distribute software, so that folks can use it</h2>
 <ul>
 <li class="fragment appear">Python packages are easy to install&#x2026; <i>most of the time</i>.<br /></li>
 <li class="fragment appear">A recent example for me is mokapot: <a href="https://github.com/wfondrie/mokapot">https://github.com/wfondrie/mokapot</a><br /></li>
@@ -200,14 +200,14 @@ Install with pip or conda:<br />
 </section>
 </section>
 <section>
-<section id="slide-orgd1dbf9c">
-<h2 id="orgd1dbf9c">How do you write a Python package?</h2>
+<section id="slide-org945a323">
+<h2 id="org945a323">How do you write a Python package?</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-orgdd25ab2">
-<h2 id="orgdd25ab2">Let&rsquo;s make a package together</h2>
+<section id="slide-org9e362ff">
+<h2 id="org9e362ff">Let&rsquo;s make a package together</h2>
 <ul>
 <li class="fragment appear">We&rsquo;ll make a package called <b><b>inspired</b></b>.<br /></li>
 <li class="fragment appear"><p>
@@ -232,13 +232,13 @@ It will provide random inspirational messages on demand (for error and progress 
 </section>
 </section>
 <section>
-<section id="slide-orgb630d3e">
-<h2 id="orgb630d3e">The structure of our package</h2>
+<section id="slide-orgca3f404">
+<h2 id="orgca3f404">The structure of our package</h2>
 <ul>
 <li class="fragment appear"><p>
 A package is little more than a collection of python scripts:<br />
 </p>
-<pre class="example" id="org1bcc5c0">
+<pre class="example" id="org5556c99">
   inspired
   |- LICENSE
   |- README.md
@@ -258,14 +258,14 @@ A package is little more than a collection of python scripts:<br />
 </section>
 </section>
 <section>
-<section id="slide-org73c83a8">
-<h2 id="org73c83a8">The README</h2>
+<section id="slide-org081294b">
+<h2 id="org081294b">The README</h2>
 <ul>
 <li class="fragment appear">Describes the package to whatever level of detail we want.<br /></li>
 <li class="fragment appear"><p>
 We&rsquo;ll keep ours simple:<br />
 </p>
-<pre class="example" id="org1b77243">
+<pre class="example" id="orgcd11771">
   # inspired
   Effortlessly inject inspirational messages into your Python code.
 </pre></li>
@@ -275,8 +275,8 @@ We&rsquo;ll keep ours simple:<br />
 </section>
 </section>
 <section>
-<section id="slide-orgb33e032">
-<h2 id="orgb33e032">The LICENSE</h2>
+<section id="slide-org02261ca">
+<h2 id="org02261ca">The LICENSE</h2>
 <ul>
 <li class="fragment appear">There are a few open-source license to choose from.<br /></li>
 <li class="fragment appear">Check out <a href="https://choosealicense.com/">https://choosealicense.com/</a> for help.<br /></li>
@@ -293,8 +293,8 @@ The MIT License is short and to the point. It lets people do almost anything the
 </section>
 </section>
 <section>
-<section id="slide-orgb18846c">
-<h2 id="orgb18846c">pyproject.toml specifies configurations for build tools</h2>
+<section id="slide-orgf5ad0d9">
+<h2 id="orgf5ad0d9">pyproject.toml specifies configurations for build tools</h2>
 <ul>
 <li class="fragment appear">A good blog post on why it is helpful <a href="https://snarky.ca/what-the-heck-is-pyproject-toml/">https://snarky.ca/what-the-heck-is-pyproject-toml/</a><br /></li>
 <li class="fragment appear"><p>
@@ -316,8 +316,8 @@ For our basic package, our <code>pyproject.toml</code> is:<br />
 </section>
 </section>
 <section>
-<section id="slide-org58fc4a8">
-<h2 id="org58fc4a8">setup.cfg defines your package metadata</h2>
+<section id="slide-org6b9c21c">
+<h2 id="org6b9c21c">setup.cfg defines your package metadata</h2>
 <ul>
 <li>See <a href="https://packaging.python.org/tutorials/packaging-projects/">https://packaging.python.org/tutorials/packaging-projects/</a> for the available fields.<br /></li>
 
@@ -326,8 +326,8 @@ For our basic package, our <code>pyproject.toml</code> is:<br />
 </section>
 </section>
 <section>
-<section id="slide-org2dce27f">
-<h2 id="org2dce27f">setup.py is no longer necessary</h2>
+<section id="slide-org8459630">
+<h2 id="org8459630">setup.py is no longer necessary</h2>
 <ul>
 <li class="fragment appear"><code>setup.py</code> is the legacy way to define what we did in <code>pyproject.toml</code> and <code>setup.cfg</code>.<br /></li>
 <li class="fragment appear"><p>
@@ -354,8 +354,8 @@ Ours will be:<br />
 </section>
 </section>
 <section>
-<section id="slide-org9cd5a05">
-<h2 id="org9cd5a05"><code>__init__.py</code> tells Python that a directory is a package</h2>
+<section id="slide-orga606a37">
+<h2 id="orga606a37"><code>__init__.py</code> tells Python that a directory is a package</h2>
 <ul>
 <li class="fragment appear">Things that are imported into <code>__init__.py</code> are easily available to users.<br /></li>
 <li class="fragment appear"><code>__init__.py</code> can be empty.<br /></li>
@@ -374,8 +374,8 @@ Ours will be:<br />
 </section>
 </section>
 <section>
-<section id="slide-org7d4e233">
-<h2 id="org7d4e233">The other Python files define the package functionality</h2>
+<section id="slide-org76d306a">
+<h2 id="org76d306a">The other Python files define the package functionality</h2>
 <ul>
 <li class="fragment appear">Each is referred to as a module.<br /></li>
 <li class="fragment appear">Functions, classes, constants, etc that are imported by <code>__init__.py</code> are<br />
@@ -395,8 +395,8 @@ Others can be reached through their respective modules.<br />
 </section>
 </section>
 <section>
-<section id="slide-org7a9b76a">
-<h2 id="org7a9b76a">Let&rsquo;s finish our package and see if it works.</h2>
+<section id="slide-org431c74a">
+<h2 id="org431c74a">Let&rsquo;s finish our package and see if it works.</h2>
 <p>
 <a href="https://github.com/wfondrie/inspired">https://github.com/wfondrie/inspired</a><br />
 </p>
@@ -405,14 +405,14 @@ Others can be reached through their respective modules.<br />
 </section>
 </section>
 <section>
-<section id="slide-org5cc4b70">
-<h2 id="org5cc4b70">How can you make your package better?</h2>
+<section id="slide-orgcd62c04">
+<h2 id="orgcd62c04">How can you make your package better?</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-org68c3a89">
-<h2 id="org68c3a89">Documentation makes your package usable</h2>
+<section id="slide-org7b49448">
+<h2 id="org7b49448">Documentation makes your package usable</h2>
 <ul>
 <li class="fragment appear">Create beautiful docs: sphinx <a href="https://www.sphinx-doc.org/en/master/">https://www.sphinx-doc.org/en/master/</a><br /></li>
 <li class="fragment appear"><p>
@@ -447,8 +447,8 @@ Sphinx can generate documentation automatically from your Python docstrings!<br 
 </section>
 </section>
 <section>
-<section id="slide-orge25c9b6">
-<h2 id="orge25c9b6">Tests verify that your package works</h2>
+<section id="slide-org9ce8b37">
+<h2 id="org9ce8b37">Tests verify that your package works</h2>
 <ul>
 <li class="fragment appear">Create and run tests: pytest<br />
 <a href="https://docs.pytest.org/en/stable/">https://docs.pytest.org/en/stable/</a><br /></li>
@@ -463,8 +463,8 @@ Sphinx can generate documentation automatically from your Python docstrings!<br 
 </section>
 </section>
 <section>
-<section id="slide-org6cbe045">
-<h2 id="org6cbe045">Linters standardize code style (and find problems)</h2>
+<section id="slide-orgec95f35">
+<h2 id="orgec95f35">Linters standardize code style (and find problems)</h2>
 <ul>
 <li class="fragment appear">PEP8 describes the Python style standards<br />
 <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a><br /></li>
@@ -478,8 +478,8 @@ Sphinx can generate documentation automatically from your Python docstrings!<br 
 </section>
 </section>
 <section>
-<section id="slide-org73222d3">
-<h2 id="org73222d3">Publish your package, so folks can use it!</h2>
+<section id="slide-orgbee77b0">
+<h2 id="orgbee77b0">Publish your package, so folks can use it!</h2>
 <ul>
 <li class="fragment appear">The Python Package Index (PyPI)<br />
 <a href="https://pypi.org/">https://pypi.org/</a><br /></li>
@@ -493,8 +493,8 @@ Sphinx can generate documentation automatically from your Python docstrings!<br 
 </section>
 </section>
 <section>
-<section id="slide-org6721f37">
-<h2 id="org6721f37">Questions?</h2>
+<section id="slide-org75d515b">
+<h2 id="org75d515b">Questions?</h2>
 </section>
 </section>
 </div>

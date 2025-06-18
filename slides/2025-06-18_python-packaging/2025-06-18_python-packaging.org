@@ -135,3 +135,7 @@ I'm sure you already know how to do this part :)
 - Add your documentation to =docs/index.md= and other markdown files.
 
 - Host on GitHub Pages or ReadTheDocs
+
+- Use [[https://mkdocstrings.github.io/][mkdocstrings]] for automatic documentation from Python docstrings
+
+- [[https://squidfunk.github.io/mkdocs-material/][mkdocs-material]] is nice.

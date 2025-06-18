@@ -1,0 +1,48 @@
+#+OPTIONS: toc:nil reveal_width:1920 reveal_height:1080 num:nil \n:t
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_VERSION: 4
+#+REVEAL_THEME: ../../css/dark.css
+#+REVEAL_TRANS: none
+#+REVEAL_HLEVEL: 3
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h2>%s</h2><h3>%a</h3><p>%d</p>
+#+REVEAL_HEAD_PREAMBLE: <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+#+Title: Reproducible Data Analyses with Snakemake
+#+Author: William E Fondrie
+#+Date: 2021-11-18
+
+* Outline
+#+ATTR_REVEAL: :frag (appear)
+- What are workflow managers?
+- Introduction to Snakemake.
+- Live example: beer proteomics.
+
+* What are workflow managers?
+#+ATTR_REVEAL: :frag (appear)
+- Define the steps of an analysis.
+- Scale independent steps with parallelization.
+- Implement a domain specific language (DSL).
+
+* Why use one?
+#+ATTR_REVEAL: :frag (appear)
+- Ensure reproducibility for yourself and others.
+- Scale on a cluster or in the cloud.
+- Deploy on a wide variety of platforms.
+
+* There are a ton of options!
+#+ATTR_REVEAL: :frag (appear)
+- [[https://snakemake.readthedocs.io][Snakemake]] (extends Python)
+- [[https://www.nextflow.io/][NextFlow]] (extends Groovy)
+- [[https://metaflow.org/][Metaflow]] (extends Python, from Netflix)
+- [[https://github.com/insitro/redun][Redun]] (extends Python, from Insitro)
+
+* Introducing Snakemake
+#+ATTR_REVEAL: :frag (appear)
+- One of the oldest (since 2012).
+- Very popular.
+- Inspired by GNU make.
+- Adds syntax for make-like rules in Python.
+
+* Example: Beer Proteomics
+https://github.com/wfondrie/snakemake-beer-proteomics

@@ -1,0 +1,84 @@
+#+OPTIONS: toc:nil reveal_width:1920 reveal_height:1080 num:nil \n:t
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_VERSION: 4
+#+REVEAL_THEME: ../../css/dark.css
+#+REVEAL_TRANS: none
+#+REVEAL_HLEVEL: 3
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h2>%s</h2><h3>%A %a</h3><p>%d</p>
+#+REVEAL_HEAD_PREAMBLE: <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+#+Title: Programming with Python
+#+Subtitle: UW Software Carpentry
+#+Author: Will Fondrie
+#+Date: 2021-05-12
+
+* Our Tentative Schedule (Day 1)
+| Time (PST) | Lesson                                |
+|------------+---------------------------------------|
+|       9:00 | Introduction and Setup                |
+|       9:10 | Python Fundamentals                   |
+|       9:40 | Analyzing Patient Data                |
+|      10:15 | Breakout Room Exercise: Slicing       |
+|      10:30 | Break                                 |
+|      10:45 | Visualizing Tabular Data              |
+|      11:15 | Breakout Room Exercise: Visualization |
+|      11:30 | Repeating Actions with Loops          |
+|      11:55 | Wrap up                               |
+
+* Our Tentative Schedule (Day 2)
+| Time (PST) | Lesson                                  |
+|------------+-----------------------------------------|
+|       9:00 | Review of Day 1                         |
+|       9:10 | Storing Multiple Values to Lists        |
+|       9:55 | Analyzing Data From Multiple Files      |
+|      10:15 | Breakout Room Exercise: Lists and Loops |
+|      10:30 | Break                                   |
+|      10:45 | Making Choices                          |
+|      11:15 | Breakout Room Exercise: Conditionals    |
+|      11:30 | Creating Functions                      |
+|      11:55 | Wrap up                                 |
+
+
+* Why learn Python?
+#+ATTR_REVEAL: :frag (appear)
+- Python has a huge scientific community!
+- Python was designed to be human readable.
+- Python is flexible.
+
+* How does everything fit together?
+
+* The shell, git, and Python enable reproducible research
+https://github.com/Noble-Lab/mokapot-analyses
+
+#+ATTR_HTML: :width 1600px
+[[./figures/oms.png]]
+
+* Let's get started!
+
+* Our Tentative Schedule (Day 1)
+| Time (PST) | Lesson                                |
+|------------+---------------------------------------|
+|       9:00 | Introduction and Setup                |
+|       9:10 | Python Fundamentals                   |
+|       9:40 | Analyzing Patient Data                |
+|      10:15 | Breakout Room Exercise: Slicing       |
+|      10:30 | Break                                 |
+|      10:45 | Visualizing Tabular Data              |
+|      11:15 | Breakout Room Exercise: Visualization |
+|      11:30 | Repeating Actions with Loops          |
+|      11:55 | Wrap up                               |
+
+* Our Tentative Schedule (Day 2)
+| Time (PST) | Lesson                                  |
+|------------+-----------------------------------------|
+|       9:00 | Introduction and review of day 1        |
+|       9:05 | Repeating Actions with Loops            |
+|       9:35 | Storing Multiple Values in Lists        |
+|      10:05 | Breakout Room Exercise: Lists and Loops |
+|      10:20 | Break                                   |
+|      10:35 | Analyzing Data from Multiple Files      |
+|      10:55 | Making Choices                          |
+|      11:25 | Breakout Room Exercise: Conditionals    |
+|      11:40 | Creating Functions                      |
+|      11:55 | Wrap up                                 |

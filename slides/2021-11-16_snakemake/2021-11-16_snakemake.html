@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Reproducible Data Analyses with Snakemake</title>
+<meta name="author" content="William E Fondrie"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../../css/dark.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Reproducible Data Analyses with Snakemake</h1><h2></h2><h3>William E Fondrie</h3><p>2021-11-18</p>
+</section>
+
+<section>
+<section id="slide-orgcd8f3d6">
+<h2 id="orgcd8f3d6">Outline</h2>
+<ul>
+<li class="fragment appear">What are workflow managers?<br /></li>
+<li class="fragment appear">Introduction to Snakemake.<br /></li>
+<li class="fragment appear">Live example: beer proteomics.<br /></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org877d05c">
+<h2 id="org877d05c">What are workflow managers?</h2>
+<ul>
+<li class="fragment appear">Define the steps of an analysis.<br /></li>
+<li class="fragment appear">Scale independent steps with parallelization.<br /></li>
+<li class="fragment appear">Implement a domain specific language (DSL).<br /></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8eeb327">
+<h2 id="org8eeb327">Why use one?</h2>
+<ul>
+<li class="fragment appear">Ensure reproducibility for yourself and others.<br /></li>
+<li class="fragment appear">Scale on a cluster or in the cloud.<br /></li>
+<li class="fragment appear">Deploy on a wide variety of platforms.<br /></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcf3c4f5">
+<h2 id="orgcf3c4f5">There are a ton of options!</h2>
+<ul>
+<li class="fragment appear"><a href="https://snakemake.readthedocs.io">Snakemake</a> (extends Python)<br /></li>
+<li class="fragment appear"><a href="https://www.nextflow.io/">NextFlow</a> (extends Groovy)<br /></li>
+<li class="fragment appear"><a href="https://metaflow.org/">Metaflow</a> (extends Python, from Netflix)<br /></li>
+<li class="fragment appear"><a href="https://github.com/insitro/redun">Redun</a> (extends Python, from Insitro)<br /></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1e3b0ac">
+<h2 id="org1e3b0ac">Introducing Snakemake</h2>
+<ul>
+<li class="fragment appear">One of the oldest (since 2012).<br /></li>
+<li class="fragment appear">Very popular.<br /></li>
+<li class="fragment appear">Inspired by GNU make.<br /></li>
+<li class="fragment appear">Adds syntax for make-like rules in Python.<br /></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4327e4d">
+<h2 id="org4327e4d">Example: Beer Proteomics</h2>
+<p>
+<a href="https://github.com/wfondrie/snakemake-beer-proteomics">https://github.com/wfondrie/snakemake-beer-proteomics</a><br />
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1920,
+height: 1080,
+
+transition: 'none',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

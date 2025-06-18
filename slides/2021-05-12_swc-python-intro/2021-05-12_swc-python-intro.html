@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Programming with Python</title>
+<meta name="author" content="Will Fondrie"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../../css/dark.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Programming with Python</h1><h2>UW Software Carpentry</h2><h3> Will Fondrie</h3><p>2021-05-12</p>
+</section>
+
+<section>
+<section id="slide-orgb4dc395">
+<h2 id="orgb4dc395">Our Tentative Schedule (Day 1)</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Time (PST)</th>
+<th scope="col" class="org-left">Lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">9:00</td>
+<td class="org-left">Introduction and Setup</td>
+</tr>
+
+<tr>
+<td class="org-right">9:10</td>
+<td class="org-left">Python Fundamentals</td>
+</tr>
+
+<tr>
+<td class="org-right">9:40</td>
+<td class="org-left">Analyzing Patient Data</td>
+</tr>
+
+<tr>
+<td class="org-right">10:15</td>
+<td class="org-left">Breakout Room Exercise: Slicing</td>
+</tr>
+
+<tr>
+<td class="org-right">10:30</td>
+<td class="org-left">Break</td>
+</tr>
+
+<tr>
+<td class="org-right">10:45</td>
+<td class="org-left">Visualizing Tabular Data</td>
+</tr>
+
+<tr>
+<td class="org-right">11:15</td>
+<td class="org-left">Breakout Room Exercise: Visualization</td>
+</tr>
+
+<tr>
+<td class="org-right">11:30</td>
+<td class="org-left">Repeating Actions with Loops</td>
+</tr>
+
+<tr>
+<td class="org-right">11:55</td>
+<td class="org-left">Wrap up</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org3d48b0c">
+<h2 id="org3d48b0c">Our Tentative Schedule (Day 2)</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Time (PST)</th>
+<th scope="col" class="org-left">Lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">9:00</td>
+<td class="org-left">Review of Day 1</td>
+</tr>
+
+<tr>
+<td class="org-right">9:10</td>
+<td class="org-left">Storing Multiple Values to Lists</td>
+</tr>
+
+<tr>
+<td class="org-right">9:55</td>
+<td class="org-left">Analyzing Data From Multiple Files</td>
+</tr>
+
+<tr>
+<td class="org-right">10:15</td>
+<td class="org-left">Breakout Room Exercise: Lists and Loops</td>
+</tr>
+
+<tr>
+<td class="org-right">10:30</td>
+<td class="org-left">Break</td>
+</tr>
+
+<tr>
+<td class="org-right">10:45</td>
+<td class="org-left">Making Choices</td>
+</tr>
+
+<tr>
+<td class="org-right">11:15</td>
+<td class="org-left">Breakout Room Exercise: Conditionals</td>
+</tr>
+
+<tr>
+<td class="org-right">11:30</td>
+<td class="org-left">Creating Functions</td>
+</tr>
+
+<tr>
+<td class="org-right">11:55</td>
+<td class="org-left">Wrap up</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org76bdc84">
+<h2 id="org76bdc84">Why learn Python?</h2>
+<ul>
+<li class="fragment appear">Python has a huge scientific community!<br /></li>
+<li class="fragment appear">Python was designed to be human readable.<br /></li>
+<li class="fragment appear">Python is flexible.<br /></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org915bce4">
+<h2 id="org915bce4">How does everything fit together?</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org2f9ff6d">
+<h2 id="org2f9ff6d">The shell, git, and Python enable reproducible research</h2>
+<p>
+<a href="https://github.com/Noble-Lab/mokapot-analyses">https://github.com/Noble-Lab/mokapot-analyses</a><br />
+</p>
+
+
+<div id="org1d6fe5d" class="figure">
+<p><img src="./figures/oms.png" alt="oms.png" width="1600px" /><br />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc6f5839">
+<h2 id="orgc6f5839">Let&rsquo;s get started!</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org40d6bd2">
+<h2 id="org40d6bd2">Our Tentative Schedule (Day 1)</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Time (PST)</th>
+<th scope="col" class="org-left">Lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">9:00</td>
+<td class="org-left">Introduction and Setup</td>
+</tr>
+
+<tr>
+<td class="org-right">9:10</td>
+<td class="org-left">Python Fundamentals</td>
+</tr>
+
+<tr>
+<td class="org-right">9:40</td>
+<td class="org-left">Analyzing Patient Data</td>
+</tr>
+
+<tr>
+<td class="org-right">10:15</td>
+<td class="org-left">Breakout Room Exercise: Slicing</td>
+</tr>
+
+<tr>
+<td class="org-right">10:30</td>
+<td class="org-left">Break</td>
+</tr>
+
+<tr>
+<td class="org-right">10:45</td>
+<td class="org-left">Visualizing Tabular Data</td>
+</tr>
+
+<tr>
+<td class="org-right">11:15</td>
+<td class="org-left">Breakout Room Exercise: Visualization</td>
+</tr>
+
+<tr>
+<td class="org-right">11:30</td>
+<td class="org-left">Repeating Actions with Loops</td>
+</tr>
+
+<tr>
+<td class="org-right">11:55</td>
+<td class="org-left">Wrap up</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org5d850f2">
+<h2 id="org5d850f2">Our Tentative Schedule (Day 2)</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Time (PST)</th>
+<th scope="col" class="org-left">Lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">9:00</td>
+<td class="org-left">Introduction and review of day 1</td>
+</tr>
+
+<tr>
+<td class="org-right">9:05</td>
+<td class="org-left">Repeating Actions with Loops</td>
+</tr>
+
+<tr>
+<td class="org-right">9:35</td>
+<td class="org-left">Storing Multiple Values in Lists</td>
+</tr>
+
+<tr>
+<td class="org-right">10:05</td>
+<td class="org-left">Breakout Room Exercise: Lists and Loops</td>
+</tr>
+
+<tr>
+<td class="org-right">10:20</td>
+<td class="org-left">Break</td>
+</tr>
+
+<tr>
+<td class="org-right">10:35</td>
+<td class="org-left">Analyzing Data from Multiple Files</td>
+</tr>
+
+<tr>
+<td class="org-right">10:55</td>
+<td class="org-left">Making Choices</td>
+</tr>
+
+<tr>
+<td class="org-right">11:25</td>
+<td class="org-left">Breakout Room Exercise: Conditionals</td>
+</tr>
+
+<tr>
+<td class="org-right">11:40</td>
+<td class="org-left">Creating Functions</td>
+</tr>
+
+<tr>
+<td class="org-right">11:55</td>
+<td class="org-left">Wrap up</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1920,
+height: 1080,
+
+transition: 'none',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

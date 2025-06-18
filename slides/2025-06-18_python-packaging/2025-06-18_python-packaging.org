@@ -1,0 +1,137 @@
+#+title: Will's Opinionated Guide to Python Packaging in 2025
+#+author: William E Fondrie
+#+DATE: 2025-06-18
+
+* Outline
+
+- Why you should write a Python package.
+- How to write a Python package.
+- Ways to make your package better.
+
+* To easily reuse code for multiple projects
+
+One the first tools I created at Talus was [[https://talusbio.github.io/vizta/][vizta]]:
+#+BEGIN_SRC python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import vizta
+
+# Use our company theme:
+vizta.mpl.set_theme("talusbio")
+
+# It also adds the color palette to Seaborn:
+pal = sns.color_palette("talubio")
+#+END_SRC
+
+* To distribute software, so that folks can use it
+
+- Python packages are easy to install... /most of the time/.
+- An example for me is mokapot: https://github.com/wfondrie/mokapot
+- Install with pip or conda:
+  #+BEGIN_SRC bash
+  # With conda:
+  conda install -c bioconda mokapot
+
+  # With pip:
+  pip install mokapot
+
+  # Or uv:
+  uv add mokapot
+  #+END_SRC
+
+* Let's make a Python package together!
+
+Tools we'll be using:
+- [[https://docs.astral.sh/uv/][uv]] : The fast, modern Python package manager
+- [[https://astral.sh/ruff][ruff]] : The fast Python linter and formatter
+- [[https://pre-commit.com/][pre-commit]] : Run tools on every Git commit
+- [[https://docs.pytest.org/en/stable/][pytest]] : The de facto Python testing framework
+- [[https://cli.github.com/][gh]] : The GitHub CLI
+- [[https://docs.github.com/en/actions][GitHub Actions]] : Automate processes on GitHub
+
+If we have time:
+- [[https://www.mkdocs.org/][mkdocs]] : Easy documentation in markdown
+
+* Our package structure
+
+Our "randomnames" package will generate random names for things:
+#+BEGIN_EXAMPLE
+.
+├── .github                    # Where we put our GH Actions
+│   └── workflows
+│       └── test.yml           # Action to run tests
+├── .pre-commit-config.yaml    # Configuration for pre-commit hooks
+├── docs                       # Where we put documentation
+│   └── index.md               # A documentation page
+├── mkdocs.yml                 # mkdocs configuration
+├── pyproject.toml             # Our package configuration
+├── README.md                  # The README
+├── src                        # Our actual python package
+│   └── randomnames
+│       ├── __init__.py        # Top-level imports here
+│       ├── adjectives.py      # Other modules in the package
+│       └── animals.py
+├── tests                      # Tests go here
+│   └── test_randomnames.py    # A specific test
+└── uv.lock                    # uv can optionally lock versions
+#+END_EXAMPLE
+
+* Step 1: Create a GitHub repository
+
+I like to use the GitHub CLI:
+#+BEGIN_SRC shell
+gh repo create <username>/randomnames --public --license "Apache-2.0" --clone
+#+END_SRC
+
+* Step 2: Initialize the package with uv
+
+We can use uv to create a package skeleton for us:
+#+BEGIN_SRC shell
+uv init --package randomnames
+#+END_SRC
+
+* Step 3: Add pre-commit hooks
+
+Pre-commit hooks lint and format our code as we go.
+
+- Create your =.pre-commit-config.yaml=.
+- Install and update your pre-commit hooks:
+  #+BEGIN_SRC shell
+  pre-commit install
+  pre-commit autoupdate
+  #+END_SRC
+
+* Step 4: Write some code
+
+I'm sure you already know how to do this part :)
+
+* Step 5: Write some tests
+
+- Add tests to the =tests= subdirectory.
+
+- Add pytest as a development dependency:
+  #+BEGIN_SRC shell
+  uv add --dev pytest
+  #+END_SRC
+
+- Run them with pytest:
+  #+BEGIN_SRC shell
+  uv run pytest run tests
+  #+END_SRC
+
+* Step 6: Add a GitHub Action
+
+- Add a GitHub action to test and lint.
+- Push to GitHub and watch it run.
+
+* Step 7: Add docs with MkDocs
+
+- Get started with documentation by initializing an MkDocs site:
+  #+BEGIN_SRC shell
+  mkdocs new
+  #+END_SRC
+
+- Add your documentation to =docs/index.md= and other markdown files.
+
+- Host on GitHub Pages or ReadTheDocs
